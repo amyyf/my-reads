@@ -69,6 +69,7 @@ class BooksApp extends React.Component {
                   */
 
                 </div>
+              </div>
             </div>
             // I think this should be a button to be semantic
             <div className="open-search">
