@@ -27,7 +27,11 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    const shelves = ['currentlyReading', 'wantToRead', 'read'];
+    const shelves = [
+      {shelfType: 'currentlyReading', shelfTitle: 'Currently Reading'},
+      {shelfType: 'wantToRead', shelfTitle: 'Want to Read'},
+      {shelfType: 'read', shelfTitle: 'Read'}
+    ];
 
     return (
       <div className="app">
@@ -48,9 +52,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               {shelves.map((shelf) => (
-                <div className="bookshelf" key={shelf}>
+                <div className="bookshelf" key={shelf.shelfType}>
                   <Bookshelf
-                    shelf={shelf}
+                    shelfTitle={shelf.shelfTitle}
                   />
                 </div>
               ))}

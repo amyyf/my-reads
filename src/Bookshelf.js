@@ -2,10 +2,13 @@ import React from 'react';
 import Book from './Book.js';
 
 class Bookshelf extends React.Component {
+
   render () {
+    const { shelfTitle } = this.props;
+
     return (
       <React.Fragment>
-        <h2 className='bookshelf-title'>Currently Reading</h2> {/*display dynamically based on category*/}
+        <h2 className='bookshelf-title'>{shelfTitle}</h2> {/* display dynamically based on category */}
         <div className='bookshelf-books'>
           <ol className='books-grid'>
 
