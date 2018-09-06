@@ -1,6 +1,11 @@
 import React from 'react';
 
 class Book extends React.Component {
+
+  state = {
+    currentShelf: this.props.shelf
+  }
+
   render () {
 
     return (

@@ -5,7 +5,7 @@ class Bookshelf extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h2 className='bookshelf-title'>Currently Reading</h2> // display dynamically based on category
+        <h2 className='bookshelf-title'>Currently Reading</h2> {/*display dynamically based on category*/}
         <div className='bookshelf-books'>
           <ol className='books-grid'>
 
@@ -14,6 +14,7 @@ class Bookshelf extends React.Component {
             <Book
               changeShelf=prop
               key=prop
+              currentShelf=prop
             />
             */}
 

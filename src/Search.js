@@ -1,12 +1,15 @@
 import React from 'react';
 
 class Search extends React.Component {
+  state = {
+    query: ''
+  }
 
   render () {
     return (
       <React.Fragment>
         <div className='search-books-bar'>
-          <a className='close-search' onClick={() => this.setState({ showSearchPage: false })}>Close</a> //TODO router
+          <a className='close-search' onClick={() => this.setState({ showSearchPage: false })}>Close</a> {/*TODO router*/}
           <div className='search-books-input-wrapper'>
             {/*
               NOTES: The search from BooksAPI is limited to a particular set of search terms.

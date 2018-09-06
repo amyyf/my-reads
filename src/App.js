@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom';
 
 class BooksApp extends React.Component {
   state = {
-
+    books: [],
     // get React Router to do this
     /**
      * TODO: Instead of using this state variable to keep track of which page
@@ -19,17 +19,26 @@ class BooksApp extends React.Component {
     showSearchPage: false
   }
 
+  componentDidMount () {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books });
+      console.log(this.state.books);
+    })
+  }
+
   render() {
+    const shelves = ['currentlyReading', 'wantToRead', 'read'];
+
     return (
       <div className="app">
         {this.state.showSearchPage ? (
           <div className="search-books">
 
-            /*
+            {/*
             <Search
 
             />
-            */
+            */}
 
           </div>
         ) : (
@@ -38,40 +47,16 @@ class BooksApp extends React.Component {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-              <div>
-
-                //this could be a map depending on the data and if I want the user to be able to create new shelves
-
-                <div className="bookshelf">
-
-                  /*
+              {shelves.map((shelf) => (
+                <div className="bookshelf" key={shelf}>
                   <Bookshelf
-                    category="currentlyReading"
+                    shelf={shelf}
                   />
-                  */
-
                 </div>
-                <div className="bookshelf">
+              ))}
 
-                  /*
-                  <Bookshelf
-                    category="wantToRead"
-                  />
-                  */
-
-                </div>
-                <div className="bookshelf">
-
-                  /*
-                  <Bookshelf
-                    category="read"
-                  />
-                  */
-
-                </div>
-              </div>
             </div>
-            // I think this should be a button to be semantic
+            {/*I think this should be a button to be semantic*/}
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
