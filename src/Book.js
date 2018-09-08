@@ -7,7 +7,7 @@ class Book extends React.Component {
   }
 
   render () {
-
+    const {title, cover, url} = this.props;
     return (
       <div className='book'>
         <div className='book-top'>

@@ -51,9 +51,10 @@ class BooksApp extends React.Component {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-              {shelves.map((shelf) => (
+              {shelves.map( shelf => (
                 <div className="bookshelf" key={shelf.shelfType}>
                   <Bookshelf
+                    books={this.state.books.filter( book => book.shelf === shelf.shelfType )}
                     shelfTitle={shelf.shelfTitle}
                   />
                 </div>

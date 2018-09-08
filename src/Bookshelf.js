@@ -4,27 +4,24 @@ import Book from './Book.js';
 class Bookshelf extends React.Component {
 
   render () {
-    const { shelfTitle } = this.props;
+    const { books, shelfTitle } = this.props;
 
     return (
       <React.Fragment>
-        <h2 className='bookshelf-title'>{shelfTitle}</h2> {/* display dynamically based on category */}
+        <h2 className='bookshelf-title'>{shelfTitle}</h2>
         <div className='bookshelf-books'>
           <ol className='books-grid'>
-
-            {/*
-            map over array of books based on title(category) and render each as an li
-            <Book
-              changeShelf=prop
-              key=prop
-              currentShelf=prop
-            />
-            */}
-
+            {books.map(book => (
+              <li key={book.id}>
+                <Book
+                  {...book}
+                />
+              </li>
+            ))}
           </ol>
         </div>
       </React.Fragment>
-    )
+    );
   }
 }
 
