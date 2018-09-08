@@ -48,7 +48,6 @@ class BooksApp extends React.Component {
                   />
                 </div>
               ))}
-
             </div>
             <div className='open-search'>
               <Link to='/search'>
@@ -63,7 +62,7 @@ class BooksApp extends React.Component {
           render={({ history }) => (
             <div className='search-books'>
               <Search
-
+                updateShelves={this.updateShelves}
               />
             </div>
           )}
