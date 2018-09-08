@@ -11,9 +11,15 @@ class Search extends React.Component {
       resultsList: []
     };
   }
+  // TODO make a page for empty search results - i.e. 'no books match your search'
+  // TODO handle reset when query string is deleted and s/b empty again
+  // TODO trimming to handle whitespace on edges
 
   getResults () {
-    search(this.state.query).then(results => this.populateResults(results));
+    console.log(this.state.query);
+    if (this.state.query) {
+      search(this.state.query).then(results => this.populateResults(results));
+    }
   }
 
   populateResults (results) {
@@ -57,7 +63,6 @@ class Search extends React.Component {
                   {...book}
                   onUpdate={updateShelves}
                 />
-                TODO make a page for empty search results - i.e. 'no books match your search'
               </li>
             ))}
           </ol>

@@ -40,4 +40,9 @@ class Book extends React.Component {
   }
 }
 
+Book.defaultProps = {
+  authors: [],
+  imageLinks: {smallThumbnail: ''}
+};
+
 export default Book;
