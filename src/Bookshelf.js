@@ -2,9 +2,8 @@ import React from 'react';
 import Book from './Book.js';
 
 class Bookshelf extends React.Component {
-
   render () {
-    const { books, shelfTitle } = this.props;
+    const { books, shelfTitle, updateShelves } = this.props;
 
     return (
       <React.Fragment>
@@ -15,6 +14,7 @@ class Bookshelf extends React.Component {
               <li key={book.id}>
                 <Book
                   {...book}
+                  onUpdate={updateShelves}
                 />
               </li>
             ))}

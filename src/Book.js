@@ -1,9 +1,17 @@
 import React from 'react';
+import { update } from './BooksAPI.js';
 
 class Book extends React.Component {
+  constructor (props) {
+    super(props);
+    this.selectShelf = this.selectShelf.bind(this);
+  }
 
-  state = {
-    currentShelf: this.props.shelf
+  selectShelf (event) {
+    const newShelf = event.target.value;
+    update(this.props, newShelf).then(() =>
+      this.props.onUpdate()
+    );
   }
 
   render () {
@@ -11,9 +19,9 @@ class Book extends React.Component {
     return (
       <div className='book'>
         <div className='book-top'>
-          <div className='book-cover' style={{ width: 128, height: 193, backgroundImage: `url("${img}")` }}></div>
+          <div className='book-cover' style={{ width: 128, height: 193, backgroundImage: `url("${img}")` }} />
           <div className='book-shelf-changer'>
-            <select>
+            <select value={this.props.shelf} onChange={this.selectShelf}>
               <option value='move' disabled>Move to...</option>
               <option value='currentlyReading'>Currently Reading</option>
               <option value='wantToRead'>Want to Read</option>
@@ -28,7 +36,7 @@ class Book extends React.Component {
           <div className='book-authors' key={author}>{author}</div>
         ))}
       </div>
-    )
+    );
   }
 }
 
