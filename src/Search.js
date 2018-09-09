@@ -16,8 +16,8 @@ class Search extends React.Component {
   // TODO trimming to handle whitespace on edges
 
   getResults () {
-    console.log(this.state.query);
-    if (this.state.query) {
+    console.log(this.state.resultsList);
+    if (this.state.query !== '') {
       search(this.state.query).then(results => this.populateResults(results));
     }
   }
@@ -27,7 +27,7 @@ class Search extends React.Component {
   }
 
   updateQuery (query) {
-    this.setState({ query: query }, () => this.getResults());
+    this.setState({ query: query.trim() }, () => this.getResults());
   }
 
   render () {
@@ -56,16 +56,23 @@ class Search extends React.Component {
           </div>
         </div>
         <div className='search-books-results'>
-          <ol className='books-grid'>
-            {this.state.resultsList.map(book => (
-              <li key={book.id}>
-                <Book
-                  {...book}
-                  onUpdate={updateShelves}
-                />
-              </li>
-            ))}
-          </ol>
+          {/*
+            if no search results match query, an error object is returned,
+            so check that resultsList is an array before attempting to map over
+          */}
+          {Array.isArray(this.state.resultsList)
+            ? <ol className='books-grid'>
+              {this.state.resultsList.map(book => (
+                <li key={book.id}>
+                  <Book
+                    {...book}
+                    onUpdate={updateShelves}
+                  />
+                </li>
+              ))}
+            </ol>
+            : <div>No results</div>
+          }
         </div>
       </React.Fragment>
     );
