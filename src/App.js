@@ -50,7 +50,7 @@ class BooksApp extends React.Component {
               ))}
             </div>
             <div className='open-search'>
-              <Link to='/search'>
+              <Link to='/search' aria-label='search for a book'>
                 Add a book
               </Link>
             </div>

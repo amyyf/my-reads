@@ -22,7 +22,6 @@ class Search extends React.Component {
 
   populateResults (results) {
     this.setState({ resultsList: results });
-    console.log(results);
   }
 
   updateQuery (query) {
@@ -33,8 +32,9 @@ class Search extends React.Component {
     const { updateShelves } = this.props;
     return (
       <React.Fragment>
+        <h1 className='hidden'>Search books by title or author</h1>
         <div className='search-books-bar'>
-          <Link to='/' className='close-search'>Close</Link>
+          <Link to='/' className='close-search' aria-label='close search'>Close</Link>
           <div className='search-books-input-wrapper'>
             {/*
               NOTES: The search from BooksAPI is limited to a particular set of search terms.
@@ -47,6 +47,7 @@ class Search extends React.Component {
             <input
               type='text'
               placeholder='Search by title or author'
+              aria-label='search by title or author'
               onChange={event => {
                 this.updateQuery(event.target.value);
               }}

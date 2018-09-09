@@ -12,10 +12,11 @@ body, .app {
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #072d96;
   text-align: center;
 }
 .list-books-title h1 {
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   margin: 0;
   color: white;
@@ -38,7 +39,9 @@ body, .app {
 
 .bookshelf-title {
   border-bottom: 1px solid #dedede;
+  font-family: 'Poppins', sans-serif;
 }
+
 .bookshelf-books {
   text-align: center;
 }
@@ -53,7 +56,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #bf670c;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -80,6 +83,7 @@ body, .app {
 .search-books-bar input {
   width: 100%;
   padding: 15px 10px;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.25em;
   border: none;
   outline: none;
@@ -147,7 +151,7 @@ body, .app {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #f98c1b;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -172,3 +176,12 @@ body, .app {
   text-align: center;
   font-size: 0.8em;
 }
+
+
+.hidden
+{position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;}
