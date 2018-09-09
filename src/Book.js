@@ -21,7 +21,7 @@ class Book extends React.Component {
         <div className='book-top'>
           <div className='book-cover' style={{ width: 128, height: 193, backgroundImage: `url("${img}")` }} />
           <div className='book-shelf-changer'>
-            <select value={this.props.shelf} onChange={this.selectShelf}>
+            <select value={this.props.shelf} onChange={this.selectShelf} aria-label='select a shelf'>
               <option value='move' disabled>Move to...</option>
               <option value='currentlyReading'>Currently Reading</option>
               <option value='wantToRead'>Want to Read</option>
@@ -42,7 +42,8 @@ class Book extends React.Component {
 
 Book.defaultProps = {
   authors: [],
-  imageLinks: {smallThumbnail: ''}
+  imageLinks: {smallThumbnail: ''},
+  shelf: 'none'
 };
 
 export default Book;

@@ -22,6 +22,7 @@ class Search extends React.Component {
 
   populateResults (results) {
     this.setState({ resultsList: results });
+    console.log(results);
   }
 
   updateQuery (query) {
