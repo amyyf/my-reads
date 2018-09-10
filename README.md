@@ -4,13 +4,12 @@ This is the sixth project for my Front-End Nanodegree through [Udacity](https://
 
 Udacity says, "In the MyReads project, you'll create a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application."
 
-It's my first project using React! I began with [static starter code](https://github.com/udacity/reactnd-project-myreads-starter) and refactored to add interactivity. I didn't fork this project since I won't be merging my changes back in to the starter files.
+It's my first project using React! I began with [static starter code](https://github.com/udacity/reactnd-project-myreads-starter) and refactored to add interactivity. I did change the styling a bit for my version and also improved the site accessibility. I didn't fork this project since I won't be merging my changes back in to the starter files.
 
 ## Getting Started
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
-* to build a production version of the site instead, run `npm build`
 
 ## Udacity's Backend Server
 
